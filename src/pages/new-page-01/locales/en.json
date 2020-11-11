@@ -1,0 +1,31 @@
+{
+  "htmlTitle": "Basic console - product management - entrance management",
+  "name": "Entrance",
+  "placeholder": {
+    "input": "Please enter",
+    "select": "Please choose",
+    "inputOrSelect": "Please enter or select",
+    "searchSelect": "Please select"
+  },
+  "ruleMessage": {
+    "input": "Please enter {label}",
+    "select": "@:placeholder.select {label}",
+    "inputOrSelect": "@:placeholder.inputOrSelect {label}",
+    "searchSelect": "@:placeholder.searchSelect {label}",
+    "upload": "请上传{label}"
+  },
+  "button": {
+    "ok": "OK",
+    "cancel": "Cancel",
+    "save": "Save",
+    "detail": "Details",
+    "delete": "Delete",
+    "edit": "Edit"
+  },
+  "confirmTips":{
+    "delSuccess": "Delete Success"
+  },
+  "return": "return",
+  "yes": "是",
+  "no": "否"
+}
