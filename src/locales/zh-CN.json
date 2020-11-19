@@ -1,15 +1,17 @@
 {
-  "htmlTitle": "Template",
-  "name": "厂商",
-  "pageAsideTitle": "厂商分组",
+  "htmlTitle": "大数据运营中心",
+  "name": "业务规划",
+  "name2": "姓名",
+  "contact": "联系方式",
+  "account": "账号",
   "basicMessage": "基本信息",
+  "dataField": "数据域",
   "placeholder": {
     "input": "请输入内容",
     "select": "请选择",
     "date": "请选择日期",
-    "inputOrSelect": "请输入或选择",
-    "searchSelect": "请搜索选择",
-    "orgSelect": "请输入企业名称进行查询"
+    "search": "搜索{label}",
+    "searchSelect": "有权限的组织成员账号"
   },
   "ruleMessage": {
     "input": "请输入{label}",
@@ -19,27 +21,32 @@
     "upload": "请上传{label}",
     "date": "请选择{label}",
     "textarea": "请输入{label}",
-    "radio": "请选择{label}"
+    "radio": "请选择{label}",
+    "contValidate": "8-16位中文，数字，字母或下划线组成"
   },
   "button": {
     "ok": "确定",
     "cancel": "取消",
     "save": "保存",
+    "submit": "提交",
     "detail": "详情",
     "delete": "删除",
     "edit": "编辑",
     "approval": "审批",
     "drive": "驱动",
     "launch": "发起",
-    "recall": "撤销"
+    "recall": "撤销",
+    "manage": "管理",
+    "create": "新建{label}"
   },
   "confirmTips":{
-    "delSuccess": "删除成功"
+    "delConfirm": "确定删除吗？"
   },
   "return": "返回",
   "yes": "是",
   "no": "否",
   "delSuccess": "删除成功",
   "copySuccess": "复制成功",
-  "saveSuccess": "保存成功"
+  "saveSuccess": "保存成功",
+  "operate": "操作"
 }

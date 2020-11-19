@@ -1,0 +1,23 @@
+{
+  "zh-CN": {
+    "moduleCode": "板块编码",
+    "moduleCode2": "业务板块编码",
+    "moduleCreator": "板块创建人",
+    "moduleName": "业务板块名称",
+    "plateNum": "引用板块数",
+    "dataFieldNum": "数据域个数",
+    "projectNum": "工程个数",
+    "desc": "描述",
+    "desc2": "业务板块描述",
+    "status": ["启","停"],
+    "moduleLogo": "板块关键字",
+    "moduleWheel": "业务负责人",
+    "setModuleWheel": "设置业务板块负责人"
+  },
+  "en": {
+   
+  },
+  "sv-SE": {
+    
+  }
+}

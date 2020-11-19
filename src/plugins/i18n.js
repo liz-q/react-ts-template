@@ -76,8 +76,6 @@ export const i18n = new VueI18n({
   silentTranslationWarn: true
 })
 
-// const loadedLanguages = [defaultLang] // 预装默认语言
-
 export function setI18nLanguage (lang) {
   i18n.locale = lang
   axios.defaults.headers.common['Accept-Language'] = lang
@@ -86,23 +84,5 @@ export function setI18nLanguage (lang) {
   return lang
 }
 setI18nLanguage(defaultLang)
-
-// export async function loadLanguageAsync (lang) {
-//   if (i18n.locale !== lang) {
-//     if (!loadedLanguages.includes(lang)) {
-//       const localeMsgs = await import(/* webpackChunkName: "license-manage-lang-[request]" */
-//         './locales/' + lang + '.js')
-//         .then(m => m.default)
-//       const bcLocaleMsgs = await import(/* webpackChunkName: "bc-lang-[request]" */
-//         '@geip/basic-components/lib/locale/lang/' + lang + '.js')
-//         .then(m => m.default)
-//       i18n.setLocaleMessage(lang, { ...localeMsgs, ...bcLocaleMsgs })
-//       loadedLanguages.push(lang)
-//       return setI18nLanguage(lang)
-//     }
-//     return setI18nLanguage(lang)
-//   }
-//   return lang
-// }
 
 BasicComponentsLocale.i18n((key, value) => i18n.t(key, value))

@@ -1,42 +1,42 @@
-const fs = require('fs');
-const { name } = require('./package')
-
-function getSubDirNameList(path) {
-    return fs.readdirSync(path, {withFileTypes: true})
-        .filter(file => file.isDirectory())
-        .map(file => file.name)
-}
-
-const pageList = getSubDirNameList('src/pages');
-
-const pagesMap = pageList
-    .reduce((prev, page) => {
-        prev[page] = {
-            title: page,
-            entry: `src/pages/${page}/main.js`,
-            tempalte: 'public/index.html',
-            filename: `${page}/index.html`
-            // chunks: ['chunk-vendors', 'chunk-common', 'sale-manage-lang-en', 'bc-lang-en', page]
-        }
-        return prev
-    }, {})
-console.log(pagesMap)
-
+const { name } = require('./package.json')
 
 module.exports = {
-    publicPath: '/new-page-01/',
-    devServer: {
-        headers: {
-            'Access-Control-Allow-Origin': '*'
-        }
+  publicPath: '/project-plan/',
+  devServer: {
+    port: 8081,
+    disableHostCheck: true,
+    overlay: {
+      warnings: true,
+      errors: true
     },
-    pages: pagesMap,
-    configureWebpack: {
-        output: {
-            // 把子应用打包成 umd 库格式
-            library: `${name}-[name]`,
-            libraryTarget: 'umd',
-            jsonpFunction: `webpackJsonp_${name}`
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    },
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000/',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
         }
+      }
     }
+  },
+  configureWebpack: {
+    output: {
+      // 把子应用打包成 umd 库格式
+      library: `${name}-[name]`,
+      libraryTarget: 'umd',
+      jsonpFunction: `webpackJsonp_${name}`
+    }
+  },
+  chainWebpack: config => {
+    config.module
+      .rule('i18n')
+      .resourceQuery(/blockType=i18n/)
+      .type('javascript/auto')
+      .use('i18n')
+      .loader('@kazupon/vue-i18n-loader')
+      .end()
+  }
 }
