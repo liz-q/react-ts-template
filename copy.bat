@@ -6,6 +6,6 @@ cd \liz-github\lz-webpack\
 set d=%DATE%
 git add .
 git commit -m "%d%"
-git push origin master
+git push origin main
 echo "push successful"
 pause
